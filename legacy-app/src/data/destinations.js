@@ -1,0 +1,145 @@
+// Owner-confirmed destinations. Coordinates are [longitude, latitude].
+// Countries and Tasmania use representative positions, not an assumed city visit.
+// Photos and descriptions introduce each place; they are not personal trip accounts.
+export const isSampleJournal = false
+
+function destination(id, name, country, region, coordinates, image, copy) {
+  return {
+    id, name, country, region, coordinates,
+    image: `/images/destinations/${image}.webp`,
+    imageSmall: `/images/destinations/${image}-400.webp`,
+    ...copy,
+  }
+}
+
+export const destinations = [
+  destination('bali', 'Bali', 'Indonesia', 'Asia', [115.1889, -8.4095], 'ubud', {
+    imageAlt: 'Green rice terraces and coconut palms at Tegallalang in Bali',
+    tagline: 'A little slower, a little greener.',
+    description: 'Rice terraces, palm-lined paths, and an island full of little discoveries. From the green interior to the coast, Bali has its own rhythm.',
+    atmosphere: ['Rice terraces', 'Island landscapes', 'Tropical greenery'],
+    details: 'Bali brings together volcanic landscapes, terraced rice fields, villages, and long stretches of coastline. Around Ubud, the hills unfold into layers of green, while the island’s shores offer a different view of the same tropical landscape.',
+    highlight: 'Layers of green stretching between the palms.',
+  }),
+  destination('malaysia', 'Malaysia', 'Malaysia', 'Asia', [101.9758, 4.2105], 'malaysia', {
+    imageAlt: 'The Petronas Twin Towers above Kuala Lumpur’s skyline beneath a hazy blue sky',
+    tagline: 'Big flavours. Little discoveries.',
+    description: 'Lively streets, tropical greenery, and something delicious around the corner. Malaysia makes room for city adventures and slower island days.',
+    atmosphere: ['Street food', 'Tropical landscapes', 'City discoveries'],
+    details: 'Malaysia spans the Malay Peninsula and part of Borneo, bringing together bustling cities, forested hills, and island coastlines. Markets, neighbourhood streets, and different regional cuisines offer plenty to discover between the bigger sights.',
+    highlight: 'A little wander, a new flavour, and another corner to explore.',
+  }),
+  destination('singapore', 'Singapore', 'Singapore', 'Asia', [103.8198, 1.3521], 'singapore', {
+    imageAlt: 'Marina Bay Sands and the white ArtScience Museum beside blue water in Singapore',
+    tagline: 'A small island with plenty to explore.',
+    description: 'Waterfront walks, leafy gardens, and hawker centres full of flavour. Singapore brings big-city discoveries into a little island escape.',
+    atmosphere: ['Waterfront views', 'Hawker food', 'Garden paths'],
+    details: 'Singapore’s island setting brings together a modern skyline, green spaces, and neighbourhoods with their own distinct character. Around Marina Bay, waterfront paths open onto broad city views, while hawker centres and shophouse streets offer a different pace.',
+    highlight: 'A garden path, a waterfront view, and a good meal along the way.',
+  }),
+  destination('taiwan', 'Taiwan', 'Taiwan', 'Asia', [120.9605, 23.6978], 'taiwan', {
+    imageAlt: 'Taipei 101 above the city skyline beneath a blue sky, viewed from Elephant Mountain',
+    tagline: 'Mountain air and night-market lights.',
+    description: 'Lively night markets, green mountain scenery, and streets full of little discoveries. Taiwan has plenty to explore between the city and the coast.',
+    atmosphere: ['Night markets', 'Mountain landscapes', 'City discoveries'],
+    details: 'Taiwan brings together busy cities, forested mountains, and a coastline that changes from sandy shores to steep cliffs. Taipei’s skyline offers one view of the island, while market stalls, tea shops, and neighbourhood streets reveal its smaller everyday details.',
+    highlight: 'Something delicious at the next stall, and a new view around the corner.',
+  }),
+  destination('melbourne', 'Melbourne', 'Australia', 'Oceania', [144.9631, -37.8136], 'melbourne', {
+    imageAlt: 'Melbourne’s skyline above the Yarra River',
+    tagline: 'Little laneways. Plenty of character.',
+    description: 'Trams, riverside walks, and laneways with something around every corner. A city whose small details are part of the adventure.',
+    atmosphere: ['City laneways', 'Yarra River', 'Café corners'],
+    details: 'Melbourne’s centre mixes grand old buildings with narrow lanes, arcades, and a busy tram network. The Yarra winds past the city skyline, connecting riverside paths with gardens, galleries, and neighbourhood streets.',
+    highlight: 'A city of laneways, river reflections, and unexpected corners.',
+  }),
+  destination('tasmania', 'Tasmania', 'Australia', 'Oceania', [146.8087, -41.4545], 'tasmania', {
+    imageAlt: 'Mountain peaks reflected in a calm lake in Tasmania',
+    tagline: 'Wild places and a breath of fresh air.',
+    description: 'Mountain silhouettes, quiet waterways, and a coastline with room to breathe. An island of changing scenery and little moments outdoors.',
+    atmosphere: ['Mountain landscapes', 'Wild coastlines', 'Island air'],
+    details: 'Separated from mainland Australia by Bass Strait, Tasmania brings forests, highlands, beaches, and small towns into one island. The landscape changes from rugged mountain country to sheltered bays and working waterfronts.',
+    highlight: 'An island shaped by mountains, forests, and the sea.',
+  }),
+  destination('sydney', 'Sydney', 'Australia', 'Oceania', [151.2093, -33.8688], 'sydney', {
+    imageAlt: 'Sydney Opera House and Harbour Bridge beside Sydney Harbour',
+    tagline: 'Harbour mornings and salty air.',
+    description: 'A city with the ocean at its doorstep. Harbour views, familiar sails, and coastal paths make room for little adventures close to the everyday.',
+    atmosphere: ['Harbour views', 'Coastal paths', 'Ocean air'],
+    details: 'Sydney’s harbour weaves between neighbourhoods, headlands, and pockets of bushland. The Opera House and bridge form the familiar skyline, while ferries and foreshore paths reveal the city from a different angle.',
+    highlight: 'White sails, blue water, and a city wrapped around its harbour.',
+  }),
+  destination('broken-hill', 'Broken Hill', 'Australia', 'Oceania', [141.4539, -31.9539], 'broken-hill', {
+    imageAlt: 'Sunset over rocky outback scenery at the Living Desert near Broken Hill',
+    tagline: 'Red earth. A wider horizon.',
+    description: 'Outback light, heritage streets, and open country stretching beyond the town. A different kind of Australian adventure.',
+    atmosphere: ['Outback landscapes', 'Heritage streets', 'Open skies'],
+    details: 'In far western New South Wales, Broken Hill sits among dry ranges and wide open country. Its mining history, old streets, and connection to the arts give the city a character closely tied to the surrounding landscape.',
+    highlight: 'Earthy colours and a horizon that seems to keep going.',
+  }),
+  destination('cairns', 'Cairns', 'Australia', 'Oceania', [145.7781, -16.9186], 'cairns', {
+    imageAlt: 'Rainforest-covered hills overlooking the tropical coastline near Cairns',
+    tagline: 'Tropical greens and Coral Sea blues.',
+    description: 'Palm-lined waterfronts and lush green hills in Queensland’s tropical north. A place where the rainforest and the sea feel close together.',
+    atmosphere: ['Tropical waterfront', 'Rainforest hills', 'Coral Sea'],
+    details: 'Cairns sits on the coast of tropical North Queensland, with forested ranges behind it and the Coral Sea beyond. Its esplanade and waterfront frame a city connected to the region’s reef, rainforest, and tropical landscapes.',
+    highlight: 'A tropical coastline framed by green hills.',
+  }),
+  destination('south-korea', 'South Korea', 'South Korea', 'Asia', [127.7669, 35.9078], 'south-korea', {
+    imageAlt: 'A traditional Korean palace pavilion beside a pond in Seoul',
+    tagline: 'Old rooftops and a whole new rhythm.',
+    description: 'Palace courtyards, mountain scenery, and lively city streets. A country of contrasts, with plenty of little details in between.',
+    atmosphere: ['Palace courtyards', 'Mountain landscapes', 'City streets'],
+    details: 'South Korea’s landscapes range from densely layered cities to wooded mountains and coastal towns. Traditional tiled roofs and palace grounds sit alongside modern neighbourhoods, while the country’s peninsular geography keeps the sea within the wider picture.',
+    highlight: 'Traditional rooftops set against a changing city skyline.',
+  }),
+  destination('japan', 'Japan', 'Japan', 'Asia', [138.2529, 36.2048], 'kyoto', {
+    imageAlt: 'Cherry blossoms beside Kyoto’s Yasaka Pagoda in Japan',
+    tagline: 'A thousand little things to notice.',
+    description: 'Old wooden streets, quiet gardens, and cities full of movement. Japan brings together big impressions and beautifully small details.',
+    atmosphere: ['Garden paths', 'Traditional streets', 'City discoveries'],
+    details: 'Across Japan’s islands, mountain landscapes, coastal towns, and large cities offer very different settings. Historic neighbourhoods and carefully tended gardens sit alongside busy stations and modern streets. The postcard photograph shows Kyoto’s Yasaka Pagoda.',
+    highlight: 'Beauty in a garden path, a tiled roof, or a quiet side street.',
+  }),
+  destination('italy', 'Italy', 'Italy', 'Europe', [12.5674, 41.8719], 'polignano', {
+    imageAlt: 'Illustration of an Italian coastal town above limestone cliffs and blue water',
+    illustrative: true,
+    tagline: 'Old streets, open piazzas, endless blue.',
+    description: 'Coastal towns, historic cities, and little streets that open onto something lovely. Italy has plenty of room for an unhurried wander.',
+    atmosphere: ['Historic streets', 'Coastal towns', 'Piazza life'],
+    details: 'Italy stretches from Alpine landscapes to a long Mediterranean coastline. Historic cities, hill towns, and seaside villages each bring their own architecture and setting. The coastal illustration takes its inspiration from the pale limestone shores of Puglia.',
+    highlight: 'A narrow street opening onto an unexpected view.',
+  }),
+  destination('greece', 'Greece', 'Greece', 'Europe', [21.8243, 39.0742], 'greece', {
+    imageAlt: 'White buildings on Santorini overlooking the blue Aegean Sea in Greece',
+    tagline: 'Sun-warmed stone and shades of blue.',
+    description: 'Island coastlines, old stone streets, and clear blue horizons. Greece fits right into a journal full of seaside discoveries.',
+    atmosphere: ['Island coastlines', 'Old stone streets', 'Mediterranean light'],
+    details: 'Greece brings mountainous mainland landscapes together with islands scattered through the surrounding seas. Its coastal towns, ancient sites, and village streets reveal different layers of the country, with stone, sea, and bright natural light recurring along the way.',
+    highlight: 'Blue water beyond sun-warmed walls and winding little streets.',
+  }),
+  destination('france', 'France', 'France', 'Europe', [2.2137, 46.2276], 'france', {
+    imageAlt: 'The Eiffel Tower above gardens under a blue sky in Paris, France',
+    tagline: 'A little beauty around every corner.',
+    description: 'City boulevards, village streets, and landscapes that change with every region. A place for grand views and smaller discoveries.',
+    atmosphere: ['City architecture', 'Village streets', 'Changing landscapes'],
+    details: 'France’s regions range from Atlantic coastlines and Alpine mountains to countryside and Mediterranean shores. Its cities and towns add another layer of variety, with riverside walks, old squares, and architecture from different periods.',
+    highlight: 'The small details between the landmarks.',
+  }),
+  destination('london', 'London', 'United Kingdom', 'Europe', [-0.1276, 51.5072], 'london', {
+    imageAlt: 'London’s Tower Bridge spanning the River Thames',
+    tagline: 'Familiar landmarks. Unfamiliar little streets.',
+    description: 'River walks, neighbourhood corners, and a skyline full of stories. London always has another side street to discover.',
+    atmosphere: ['Thames walks', 'Historic landmarks', 'Neighbourhood streets'],
+    details: 'London spreads around the River Thames, linking historic landmarks with neighbourhoods of very different character. Bridges, parks, markets, and old streets create a city that can be explored through both its famous views and its quieter corners.',
+    highlight: 'A familiar skyline seen from a different bend in the river.',
+  }),
+  destination('switzerland', 'Switzerland', 'Switzerland', 'Europe', [8.2275, 46.8182], 'switzerland', {
+    imageAlt: 'Lake Oeschinen beneath the Swiss Alps in Switzerland',
+    tagline: 'Mountain air and a slower kind of view.',
+    description: 'Alpine peaks, clear lakes, and towns tucked between the hills. A country where the landscape is part of the journey.',
+    atmosphere: ['Alpine peaks', 'Lake views', 'Mountain towns'],
+    details: 'Switzerland’s geography is shaped by the Alps, the Jura, and the plateau between them. Lakes, valleys, and towns sit within that varied landscape, with changing elevations offering different perspectives on the mountains.',
+    highlight: 'A lake reflecting the mountains beyond its shore.',
+  }),
+]

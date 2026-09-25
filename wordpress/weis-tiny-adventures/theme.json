@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": { "contentSize": "760px", "wideSize": "1180px" },
+    "color": { "defaultPalette": false, "palette": [
+      { "slug": "navy", "name": "Journal navy", "color": "#17364d" },
+      { "slug": "sea", "name": "Sea blue", "color": "#207da9" },
+      { "slug": "watercolor", "name": "Watercolor blue", "color": "#80b9cf" },
+      { "slug": "paper", "name": "Warm paper", "color": "#fbf9f8" },
+      { "slug": "white", "name": "White", "color": "#ffffff" }
+    ] },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        { "name": "Lato", "slug": "body", "fontFamily": "Lato, Arial, sans-serif", "fontFace": [
+          { "fontFamily": "Lato", "fontWeight": "400", "fontStyle": "normal", "src": ["file:./assets/fonts/lato-regular.woff2"] },
+          { "fontFamily": "Lato", "fontWeight": "700", "fontStyle": "normal", "src": ["file:./assets/fonts/lato-bold.woff2"] },
+          { "fontFamily": "Lato", "fontWeight": "900", "fontStyle": "normal", "src": ["file:./assets/fonts/lato-black.woff2"] }
+        ] },
+        { "name": "Cormorant Garamond", "slug": "heading", "fontFamily": "'Cormorant Garamond', Georgia, serif", "fontFace": [
+          { "fontFamily": "Cormorant Garamond", "fontWeight": "600", "fontStyle": "normal", "src": ["file:./assets/fonts/cormorant-garamond-semibold.woff2"] },
+          { "fontFamily": "Cormorant Garamond", "fontWeight": "700", "fontStyle": "normal", "src": ["file:./assets/fonts/cormorant-garamond-bold.woff2"] }
+        ] },
+        { "name": "Allura", "slug": "script", "fontFamily": "Allura, cursive", "fontFace": [
+          { "fontFamily": "Allura", "fontWeight": "400", "fontStyle": "normal", "src": ["file:./assets/fonts/allura-regular.woff2"] }
+        ] }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "Small", "size": "0.8rem" },
+        { "slug": "medium", "name": "Body", "size": "1rem" },
+        { "slug": "large", "name": "Large", "size": "1.5rem" },
+        { "slug": "x-large", "name": "Heading", "size": "3rem" }
+      ]
+    },
+    "spacing": { "units": ["px", "rem", "%", "vw", "vh"], "blockGap": true }
+  },
+  "styles": {
+    "color": { "background": "var:preset|color|paper", "text": "var:preset|color|navy" },
+    "typography": { "fontFamily": "var:preset|font-family|body", "fontSize": "1rem", "lineHeight": "1.7" },
+    "spacing": { "blockGap": "0" },
+    "elements": {
+      "heading": { "typography": { "fontFamily": "var:preset|font-family|heading", "fontWeight": "600", "lineHeight": "1.12" } },
+      "link": { "color": { "text": "var:preset|color|sea" } },
+      "button": { "color": { "background": "var:preset|color|sea", "text": "var:preset|color|white" }, "border": { "radius": "999px" } }
+    }
+  },
+  "templateParts": [
+    { "name": "header", "title": "Site header", "area": "header" },
+    { "name": "footer", "title": "Site footer", "area": "footer" }
+  ],
+  "customTemplates": [ { "name": "journal-page", "title": "Travel journal layout", "postTypes": ["page"] } ]
+}

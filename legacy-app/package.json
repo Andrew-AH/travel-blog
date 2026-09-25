@@ -1,0 +1,31 @@
+{
+  "name": "weis-tiny-adventures",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "newsletter:export": "node --env-file-if-exists=.env scripts/export-subscribers.mjs",
+    "test:newsletter": "node --test scripts/newsletter-server.test.mjs",
+    "test:destinations": "node --test scripts/destination-map.test.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "2.1.10",
+    "d3-geo": "^3.1.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "sharp": "^0.35.4",
+    "vite": "8.3.0"
+  }
+}

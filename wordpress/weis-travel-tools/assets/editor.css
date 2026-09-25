@@ -1,0 +1,5 @@
+.wei-editor-block { padding: 16px; border: 1px dashed #90a9b4; }
+.wei-editor-block-label { padding: 12px 16px; margin-bottom: 18px; color: #173b51; background: #eaf2f4; font: 13px/1.5 system-ui, sans-serif; }
+.wei-editor-block-label p { margin: 6px 0 0; font: inherit; }
+.wei-editor-block .wei-widget-data { display: none; }
+.wei-editor-block .wei-atlas-fallback { max-height: 430px; overflow: auto; }

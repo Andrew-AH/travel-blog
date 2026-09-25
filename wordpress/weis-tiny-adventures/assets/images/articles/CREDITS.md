@@ -1,0 +1,19 @@
+# Homepage article photography
+
+Stock photographs are downloaded from Unsplash and Wikimedia Commons. Their WebP versions are resized and cropped to 4:3; no content has been added or removed other than the crop. Each photograph retains its source license listed below. The current Lovina photograph was supplied by the user and retains its full portrait composition in the image files; the homepage card frames it with CSS.
+
+| Served file | Photograph and author | Source | License | Suggested alt text |
+| --- | --- | --- | --- | --- |
+| `indomie-mi-goreng.webp`, `indomie-mi-goreng-400.webp` | “Cooking two packs of Indomie noodles” by Andy Li (cropped to the packets) | [Original description](https://commons.wikimedia.org/wiki/File:Cooking_two_packs_of_Indomie_noodles.jpg) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | Indomie Mi Goreng packets and seasoning sachets on a wooden countertop. |
+| `lovina-sails.webp`, `lovina-sails-400.webp` | Colourful sails in the shallows at Lovina, supplied by the user on 24 September 2026 | Original chat attachment retained as `lovina-sails-original.jpg` | User-supplied photograph; no third-party stock license asserted | Colourful sails on small boats in the shallows at Lovina Beach, Bali. |
+| `bintang.webp`, `bintang-400.webp` | “Bintang Beer” by Dean McQuade, Nusa Dua Beach, Bali | [Original photo page](https://unsplash.com/photos/heineken-bottle-on-brown-wooden-table-9Gq2jSqjPS4) | [Unsplash License](https://unsplash.com/license) | A bottle of Bintang beer on a table overlooking Nusa Dua Beach in Bali. |
+| `bali-snacks.webp`, `bali-snacks-400.webp` | “Klepon Top View” by Joseagush | [Original description](https://commons.wikimedia.org/wiki/File:Klepon_Top_View.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Coconut-coated klepon on a banana leaf with tropical flowers. |
+| `lovina.webp`, `lovina-400.webp` | “Beach at Lovina, Bali” by Ken Eckert | [Original description](https://commons.wikimedia.org/wiki/File:Beach_at_Lovina,_Bali.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Colourful outrigger boats on the dark sand of Lovina Beach, Bali. |
+
+Original downloads are retained as `bali-snacks-original.jpg` and `lovina-original.jpg`. Source metadata identifies the snacks as traditional Balinese klepon and the beach as Lovina, Bali, Indonesia. Verified 24 September 2026.
+
+The user-supplied sailing photograph now appears on “THE PERFECT DAY IN LOVINA”. Its original 748 × 997 JPEG is retained unchanged. The WebP variants are resized copies; no generative edits or colour changes were made. `object-position: center 72%` keeps the sails visible in the landscape article card. The earlier Ken Eckert photograph and its license are retained above for the archived files, which are no longer displayed on the homepage.
+
+The Indomie Mi Goreng photograph now appears on the “MUST TRY SNACKS IN BALI” card. Its original 4032 × 3024 JPEG is retained unchanged as `indomie-mi-goreng-original.jpg`, downloaded from [Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/c/cd/Cooking_two_packs_of_Indomie_noodles.jpg). After normalizing EXIF orientation, the WebP versions crop to a 1600 × 1200 rectangle at left 2140, top 820, then resize to 800 × 600 and 400 × 300 at quality 82. The close-up keeps the packets visible; no colours or image content were altered beyond the crop. Photographer and CC0 license verified 24 September 2026.
+
+The previous Bintang and klepon files are retained but are no longer displayed. `bintang-original.jpg` is a 1600-pixel source download from [Unsplash's image CDN](https://images.unsplash.com/photo-1586516612497-350f5995c33d?auto=format&fit=max&w=1600&q=90). The photo page caption identifies it as “Bintang Beer” despite the automatically generated page title mentioning Heineken. Author, location, and license verified 24 September 2026.

@@ -1,0 +1,12 @@
+.unsubscribe-main { width: min(560px, calc(100% - 40px)); margin: 65px auto 90px; text-align: center; }
+.unsubscribe-main > svg:first-child { color: #478cab; margin-bottom: 22px; }
+.unsubscribe-main h1 { font: 600 clamp(42px, 5vw, 60px)/1.08 var(--serif); letter-spacing: -.025em; margin-top: 12px; }
+.unsubscribe-main > .wave-flourish { display: block; width: 88px; height: 13px; margin: 25px auto; }
+.unsubscribe-main > p:not(.subscribe-script) { max-width: 440px; margin: 0 auto; color: #526a77; font-size: 14px; line-height: 1.85; }
+.unsubscribe-button { display: inline-flex; justify-content: center; min-height: 48px; margin-top: 27px; padding: 14px 24px; border: 0; border-radius: 99px; background: var(--button-blue); color: white; font-size: 12px; font-weight: 700; }
+.unsubscribe-button:hover:enabled { background: #17658a; }
+.unsubscribe-button:disabled { cursor: wait; opacity: .72; }
+.unsubscribe-main > .unsubscribe-error { margin-top: 16px !important; color: #923e34 !important; }
+.unsubscribe-back { display: flex; justify-content: center; align-items: center; width: fit-content; min-height: 44px; margin: 23px auto 0; gap: 9px; color: #256f91; font-size: 12px; text-decoration: none; }
+.unsubscribe-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 639px) { .unsubscribe-main { margin-block: 38px 55px; } }

@@ -1,0 +1,88 @@
+/* Original wave and serif/script wordmark, shared by every page. */
+.brand {
+  --brand-gap: calc(1.6 * var(--u));
+  --brand-mark-width: calc(8 * var(--u));
+  --brand-mark-height: calc(6.8 * var(--u));
+  --brand-name-width: calc(18 * var(--u));
+  --brand-title-size: calc(3.5 * var(--u));
+  --brand-script-size: calc(4.3 * var(--u));
+  --brand-script-margin: calc(.35 * var(--u));
+  display: flex;
+  align-items: center;
+  gap: var(--brand-gap);
+  flex-shrink: 0;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-emblem {
+  display: block;
+  flex: none;
+  width: var(--brand-mark-width);
+  height: var(--brand-mark-height);
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  width: var(--brand-name-width);
+}
+
+.brand-title {
+  font: 700 var(--brand-title-size)/.95 var(--serif);
+  letter-spacing: -.025em;
+}
+
+.brand-tagline {
+  font: 400 var(--brand-script-size)/.9 var(--script);
+  -webkit-text-stroke: .25px currentColor;
+  margin-top: var(--brand-script-margin);
+}
+
+:where(.atlas-page, .tips-page, .budget-page, .about-page, .subscribe-page) .brand {
+  --brand-gap: 15px;
+  --brand-mark-width: 66px;
+  --brand-mark-height: 61px;
+  --brand-name-width: 155px;
+  --brand-title-size: 30px;
+  --brand-script-size: 40px;
+  --brand-script-margin: 4px;
+}
+
+@media (max-width: 1050px) {
+  :where(.atlas-page, .tips-page, .budget-page, .about-page, .subscribe-page) .brand {
+    --brand-mark-width: 54px;
+    --brand-name-width: 138px;
+    --brand-title-size: 28px;
+    --brand-script-size: 36px;
+  }
+}
+
+@media (max-width: 639px) {
+  .brand {
+    --brand-gap: 9px;
+    --brand-mark-width: 46px;
+    --brand-mark-height: 45px;
+    --brand-name-width: 124px;
+    --brand-title-size: 26px;
+    --brand-script-size: 33px;
+  }
+  :where(.atlas-page, .tips-page, .budget-page, .about-page, .subscribe-page) .brand {
+    --brand-gap: 8px;
+    --brand-mark-width: 41px;
+    --brand-mark-height: 44px;
+    --brand-name-width: 116px;
+    --brand-title-size: 25px;
+    --brand-script-size: 32px;
+    --brand-script-margin: 3px;
+  }
+}
+
+@media (max-width: 359px) {
+  .brand {
+    --brand-mark-width: 35px;
+    --brand-name-width: 110px;
+    --brand-script-size: 30px;
+  }
+}

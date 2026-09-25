@@ -1,0 +1,92 @@
+.travel-safety {
+  color: var(--navy);
+  scroll-margin-top: 28px;
+}
+
+.travel-safety-main {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  border: 1px solid #d2e0e2;
+  background: #f5f8f7;
+}
+
+.travel-safety-intro {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 43px 42px 36px;
+  color: #fffefa;
+  background: #1b4359;
+}
+
+.travel-safety-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 360px;
+  color: #c9e2eb;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+}
+
+.travel-safety-kicker svg { flex-shrink: 0; }
+.travel-safety-intro h2 { margin: 22px 0 16px; max-width: 390px; font: 600 clamp(36px, 3.5vw, 48px)/1.06 var(--serif); letter-spacing: -.025em; }
+.travel-safety-intro p { position: relative; max-width: 365px; margin-bottom: 14px; color: #e0ebef; font-size: 13px; line-height: 1.9; }
+.travel-safety-signoff { display: block; margin-top: 26px; color: #b9dfe8; font: 400 39px/1.1 var(--script); }
+.travel-safety-globe { position: absolute; z-index: -1; right: -94px; bottom: -57px; color: #80b4c4; opacity: .16; transform: rotate(-17deg); }
+
+.travel-safety-tool { padding: 35px 36px 27px; }
+.travel-safety-source { display: flex; align-items: center; gap: 12px; margin-bottom: 29px; }
+.travel-safety-source-mark { display: grid; place-items: center; width: 39px; height: 39px; flex-shrink: 0; border: 1px solid #a8bec7; border-radius: 50%; font: 700 15px var(--serif); letter-spacing: .07em; }
+.travel-safety-source strong { display: block; margin-bottom: 4px; font-size: 14px; }
+.travel-safety-source div > span { display: block; color: #526a77; font-size: 10px; line-height: 1.5; }
+.travel-safety-source > svg { margin-left: auto; color: #536f7d; }
+.travel-safety-tool label { display: block; margin-bottom: 9px; font-size: 12px; font-weight: 700; }
+.travel-safety-select { position: relative; }
+.travel-safety-select select { width: 100%; min-height: 49px; appearance: none; padding: 13px 40px 13px 15px; border: 1px solid #adbdc4; border-radius: 2px; background: #fffefa; color: var(--navy); font: 400 14px Lato, Arial, sans-serif; cursor: pointer; }
+.travel-safety-select select:focus-visible { outline: 2px solid var(--button-blue); outline-offset: 4px; }
+.travel-safety-select > svg { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none; }
+.travel-safety-country-note { min-height: 32px; margin: 9px 0 12px; color: #526a77; font-size: 11px; line-height: 1.55; }
+.travel-safety-cta { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 15px; border-radius: 99px; background: var(--button-blue); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; transition: background-color .2s ease; }
+.travel-safety-cta:hover { background: #176a91; }
+.travel-safety-new-tab { margin-top: 8px; color: #526a77; text-align: center; font-size: 10px; line-height: 1.5; }
+.travel-safety-reminder { margin-top: 21px; padding-top: 18px; border-top: 1px solid #d5e0e2; color: #526a77; font-size: 11px; line-height: 1.7; }
+.travel-safety-all { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding-block: 9px; color: #286b8b; font-size: 11px; line-height: 1.5; text-underline-offset: 4px; }
+.travel-safety-all svg { flex-shrink: 0; }
+
+.travel-safety-other { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 23px 0 0; }
+.travel-safety-other > p { font-size: 12px; font-weight: 700; line-height: 1.6; }
+.travel-safety-other > p > span { display: block; color: #526a77; font-size: 11px; font-weight: 400; }
+.travel-safety-other-links { display: flex; align-items: center; gap: 24px; }
+.travel-safety-other-links a { display: flex; align-items: center; gap: 11px; min-height: 44px; padding-block: 4px; color: #286b8b; font-size: 11px; line-height: 1.5; text-decoration: none; }
+.travel-safety-other-links a:hover > span:first-child { text-decoration: underline; text-underline-offset: 3px; }
+.travel-safety-other-links small { display: block; color: #526a77; font-size: 10px; }
+.travel-safety-other-links svg { flex-shrink: 0; }
+
+@media (max-width: 850px) {
+  .travel-safety-intro { padding: 32px 27px; }
+  .travel-safety-tool { padding: 30px 26px 22px; }
+  .travel-safety-other-links { gap: 19px; }
+}
+
+@media (max-width: 650px) {
+  .travel-safety-main { grid-template-columns: 1fr; }
+  .travel-safety-intro { padding: 31px 26px 24px; }
+  .travel-safety-intro h2 { margin-top: 20px; font-size: 38px; }
+  .travel-safety-intro p { max-width: 440px; font-size: 13px; }
+  .travel-safety-signoff { margin-top: 20px; font-size: 36px; }
+  .travel-safety-tool { padding: 28px 25px 18px; }
+  .travel-safety-source { margin-bottom: 24px; }
+  .travel-safety-country-note { min-height: 0; margin-bottom: 20px; }
+  .travel-safety-other { align-items: flex-start; flex-direction: column; gap: 12px; padding: 22px 4px 0; }
+  .travel-safety-other-links { width: 100%; gap: 10px; justify-content: space-between; }
+  .travel-safety-other-links a { gap: 6px; font-size: 10px; }
+  .travel-safety-other-links small { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .travel-safety-cta { transition: none; }
+}

@@ -1,0 +1,86 @@
+name: weis-travel-blog
+
+x-wordpress-environment: &wordpress-environment
+  WORDPRESS_DB_HOST: db:3306
+  WORDPRESS_DB_NAME: wordpress
+  WORDPRESS_DB_USER: wordpress
+  WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD:?Run npm run wordpress:start first to generate .env}
+  WORDPRESS_CONFIG_EXTRA: |
+    define('WP_ENVIRONMENT_TYPE', 'local');
+    define('FS_METHOD', 'direct');
+    define('DISALLOW_FILE_EDIT', true);
+    define('WP_MEMORY_LIMIT', '256M');
+
+x-cli: &cli
+  image: wordpress:cli-php8.3
+  user: "33:33"
+  working_dir: /var/www/html
+  environment:
+    <<: *wordpress-environment
+    WP_URL: http://localhost:${WP_PORT:-8080}
+    WP_ADMIN_USER: ${WP_ADMIN_USER:-weiadmin}
+    WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD:?Run npm run wordpress:start first to generate .env}
+    WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-admin@weis.local}
+  volumes:
+    - wordpress_data:/var/www/html
+    - ./wordpress/weis-tiny-adventures:/var/www/html/wp-content/themes/weis-tiny-adventures:ro
+    - ./wordpress/weis-travel-tools:/var/www/html/wp-content/plugins/weis-travel-tools:ro
+    - ./wordpress/docker:/opt/wei-setup:ro
+  depends_on:
+    db:
+      condition: service_healthy
+    wordpress:
+      condition: service_healthy
+
+services:
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD:?Run npm run wordpress:start first to generate .env}
+      MARIADB_ROOT_PASSWORD: ${WP_DB_ROOT_PASSWORD:?Run npm run wordpress:start first to generate .env}
+    volumes:
+      - database_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WP_PORT:-8080}:80"
+    environment: *wordpress-environment
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wordpress/weis-tiny-adventures:/var/www/html/wp-content/themes/weis-tiny-adventures:ro
+      - ./wordpress/weis-travel-tools:/var/www/html/wp-content/plugins/weis-travel-tools:ro
+      - ./wordpress/docker/uploads.ini:/usr/local/etc/php/conf.d/wei-uploads.ini:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "php", "-r", "$$headers = @get_headers('http://127.0.0.1/wp-login.php'); exit($$headers && preg_match('/ [23][0-9]{2} /', $$headers[0]) ? 0 : 1);"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 20s
+
+  setup:
+    <<: *cli
+    entrypoint: ["sh", "/opt/wei-setup/setup.sh"]
+    restart: "no"
+
+  wp-cli:
+    <<: *cli
+    profiles: ["tools"]
+    entrypoint: ["wp"]
+
+volumes:
+  database_data:
+  wordpress_data:

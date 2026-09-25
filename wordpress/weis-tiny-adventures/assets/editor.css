@@ -1,0 +1,6 @@
+.editor-styles-wrapper { --u: min(1vw, 12px); }
+.editor-styles-wrapper .hero { margin-top: 0 !important; padding-top: 30px !important; }
+.editor-styles-wrapper .hero-art, .editor-styles-wrapper .whale-shark { pointer-events: auto; }
+.editor-styles-wrapper .wei-tip-collection { display: block !important; }
+.editor-styles-wrapper .block-editor-block-list__block { min-width: 0; }
+.editor-styles-wrapper .wp-block[data-type^="wei/"] { margin-block: 20px; }
